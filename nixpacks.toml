@@ -1,6 +1,8 @@
-[providers]
-php = "8.2"
-nodejs = "18"
+providers = ["php", "nodejs"]
+
+[variables]
+PHP_VERSION = "8.2"
+NODE_VERSION = "18"
 
 [phases.setup]
 nixPkgs = ['nodejs_18', 'php82', 'php82Packages.composer']
