@@ -1,0 +1,20 @@
+[providers]
+php = "8.2"
+nodejs = "18"
+
+[phases.setup]
+nixPkgs = ['nodejs_18', 'php82', 'php82Packages.composer']
+
+[phases.install]
+cmds = [
+    'composer install --no-dev --optimize-autoloader',
+    'npm ci --only=production'
+]
+
+[phases.build]
+cmds = [
+    'npm run build'
+]
+
+[start]
+cmd = 'bash start.sh'
